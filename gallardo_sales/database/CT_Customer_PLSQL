@@ -1,0 +1,19 @@
+
+create or replace procedure ct_Customer is 
+v_tabcnt number;
+begin
+    select count(*)
+    into v_tabcnt
+    from all_tables
+    where table_name = 'Customer' and owner = 'Marlon';
+    
+    if v_tabcnt = 0 then
+              execute immediate 'CREATE TABLE Customer
+          (
+                customer_id INTEGER PRIMARY KEY,
+                first_name VARCHAR(20),
+                credit DECIMAL(10,2)
+          )';
+      end if;
+      commit;
+end ct_Customer;
