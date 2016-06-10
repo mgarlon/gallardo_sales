@@ -16,4 +16,19 @@ begin
           )';
       end if;
       commit;
+
+      
+      select count(*) into v_tabcnt
+from all_sequences
+where sequence_name = 'SEQ_CUSTOMER_ID'
+and sequence_owner = 'Marlon';
+      
+    if v_tabcnt = 0 then
+      execute immediate 'create sequence SEQ_CUSTOMER_ID
+     START WITH 1000
+      INCREMENT BY 1
+      CACHE 20';
+    end if; 
+    commit;
+    
 end ct_Customer;
