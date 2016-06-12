@@ -1,0 +1,6 @@
+insert into customer values(1,'Marion',23.3);
+insert into customer values(2,'Pep',105.7);
+insert into customer values(3,'Lucas',37.1);
+insert into customer values(4,'Andrea',2.9);
+insert into customer values(5,'Julia',26.2);
+insert into customer values(6,'Anna',80.6);
